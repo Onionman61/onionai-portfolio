@@ -1,0 +1,5 @@
+{"sessionId":"c23ca2","runId":"run1","hypothesisId":"H-nav-scroll","location":"app/header-nav.tsx:handleClick","message":"HeaderNav scroll into view","data":{"id":"hero"},"timestamp":1773136018528}
+{"sessionId":"c23ca2","runId":"run1","hypothesisId":"H-nav-scroll","location":"app/header-nav.tsx:handleClick","message":"HeaderNav scroll into view","data":{"id":"matrix"},"timestamp":1773136018971}
+{"sessionId":"c23ca2","runId":"run1","hypothesisId":"H-nav-scroll","location":"app/header-nav.tsx:handleClick","message":"HeaderNav scroll into view","data":{"id":"products"},"timestamp":1773136019972}
+{"sessionId":"c23ca2","runId":"run1","hypothesisId":"H-nav-scroll","location":"app/header-nav.tsx:handleClick","message":"HeaderNav scroll into view","data":{"id":"lab"},"timestamp":1773136021164}
+{"sessionId":"c23ca2","runId":"run1","hypothesisId":"H-nav-scroll","location":"app/header-nav.tsx:handleClick","message":"HeaderNav scroll into view","data":{"id":"about"},"timestamp":1773136022022}
