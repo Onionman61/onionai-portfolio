@@ -1,3 +1,4 @@
+import { GalleryImageFrame } from "@/components/gallery-image-frame";
 import { getGalleryItems } from "@/lib/api";
 
 export async function ModelLabSection() {
@@ -28,7 +29,7 @@ export async function ModelLabSection() {
             </p>
           </div>
           <p className="mt-2 max-w-xs font-mono text-[11px] leading-relaxed text-muted">
-            图片目前为占位图，后续会替换为真实作品。
+            悬停卡片可略缩回裁切，查看更完整的画面构图。
           </p>
         </header>
       </div>
@@ -45,12 +46,16 @@ export async function ModelLabSection() {
               {groupItems.map((item) => (
                 <figure
                   key={item.id}
-                  className="group relative w-48 shrink-0 overflow-hidden rounded-2xl border border-grid/80 bg-black/70"
+                  className="relative w-48 shrink-0 overflow-hidden rounded-2xl border border-grid/80 bg-black/70"
                 >
-                  <div
-                    className="aspect-[3/4] w-full bg-[length:cover] bg-center bg-no-repeat transition duration-500 group-hover:brightness-110 group-hover:saturate-150"
-                    style={{ backgroundImage: `url('${item.imageUrl}')` }}
-                    aria-label={item.title}
+                  <GalleryImageFrame
+                    imageUrl={item.imageUrl}
+                    ariaLabel={item.title}
+                    aspectClassName="aspect-[3/4]"
+                    imagePosition={item.imagePosition}
+                    nudgeYPercent={item.imageNudgeYPercent}
+                    zoom={1.1}
+                    underlayClassName="bg-black/40"
                   />
                   <figcaption className="space-y-1 p-3 text-xs">
                     <p className="font-mono text-[11px] text-muted">

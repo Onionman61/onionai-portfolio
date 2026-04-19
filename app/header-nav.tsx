@@ -1,11 +1,11 @@
 "use client";
 
 const sections = [
-  { id: "hero", label: "Intro" },
-  { id: "matrix", label: "Matrix" },
-  { id: "products", label: "Projects" },
-  { id: "lab", label: "Lab" },
-  { id: "about", label: "About" },
+  { id: "who", label: "Who" },
+  { id: "problems", label: "Pain" },
+  { id: "solutions", label: "Demos" },
+  { id: "skills", label: "Tech" },
+  { id: "contact", label: "Contact" },
 ];
 
 export function HeaderNav() {
@@ -16,9 +16,9 @@ export function HeaderNav() {
   };
 
   return (
-    <nav className="pointer-events-auto mt-6 flex w-full max-w-5xl items-center justify-between rounded-full border border-grid/80 bg-black/70 px-6 py-3 text-[11px] uppercase tracking-[0.18em] text-muted backdrop-blur-md">
+    <nav className="pointer-events-auto mt-6 flex w-full max-w-7xl items-center justify-between rounded-full border border-grid/80 bg-black/70 px-6 py-3 text-[11px] uppercase tracking-[0.18em] text-muted backdrop-blur-md">
       <div className="flex items-center gap-3">
-        <span className="h-2 w-2 rounded-full bg-accent shadow-[0_0_18px_rgba(139,92,246,0.95)]" />
+        <span className="h-2 w-2 rounded-full bg-accent shadow-[0_0_10px_rgba(139,92,246,0.75)]" />
         <span className="font-mono text-[10px] text-foreground">
           ONIONMAN.STUDIO
         </span>

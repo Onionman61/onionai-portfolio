@@ -116,18 +116,18 @@ export async function getDevTools(): Promise<DevToolItem[]> {
       title: "ComfyUI-Onionman-Nodes",
       label: "业务导向节点库",
       description:
-        "将真实项目中的高频操作与参数组合抽象成一组“半成品”节点，减少重复连线，让更多时间花在图像本身。",
+        "业务导向的自定义算子库。将高频业务逻辑抽象为标准化的节点组件，将核心工作流节点数缩减 30%+，大幅降低调试与试错成本。",
       impact: "工作流复杂度主观体感降低约 30%，新人上手成本显著下降。",
-      link: "https://github.com/onionman/comfyui-onionman-nodes",
+      link: "https://github.com/Onionman61/ComfyUI-onionman-nodes",
     },
     {
       id: "comfyui-modelscope-bridge",
-      title: "ComfyUI-ModelScope-Bridge",
+      title: "ComfyUI-ModelScope",
       label: "混合云算力桥",
       description:
-        "为本地 ComfyUI 搭了一座“云上出口”：可以无感切换到云端模型与算力，在笔电上也能调用大模型与重型管线。",
+        "构建本地与云端的混合算力网关。实现对云端算力的无感调用，突破本地 VRAM 显存瓶颈，低成本跑通重型推理管线。",
       impact: "让个人工作站可以在不更换硬件的情况下，尝试更多大体量模型与实验。",
-      link: "https://github.com/onionman/comfyui-modelscope-bridge",
+      link: "https://github.com/Onionman61/ComfyUI-ModelScope",
     },
   ];
 }
@@ -138,45 +138,61 @@ export interface GalleryItem {
   title: string;
   tag: string;
   imageUrl: string;
+  /** background-position，用于修正裁切重心 */
+  imagePosition?: string;
+  /** 背景层向下平移（%），竖版人像更易露出头顶 */
+  imageNudgeYPercent?: number;
 }
 
 export async function getGalleryItems(): Promise<GalleryItem[]> {
   return [
     {
       id: "pirate-mascot",
-      category: "game-assets",
-      title: "Q 版海盗 · 吉祥物草图",
-      tag: "游戏资产 / 角色",
-      imageUrl: "https://placehold.co/600x800/0a0a0a/ededed?text=Game+Asset",
+      category: "art-style",
+      title: "星空幻想",
+      tag: "幻想场景 / 氛围叙事",
+      imageUrl: "/demo/lora/01-starscape.png",
     },
     {
       id: "ink-landscape",
       category: "art-style",
-      title: "山海 / 水墨气韵实验",
-      tag: "中国水墨 / 风格",
-      imageUrl: "https://placehold.co/600x800/0a0a0a/ededed?text=Ink+Style",
+      title: "古风仙侠厚涂",
+      tag: "仙侠角色 / 国风厚涂",
+      imageUrl: "/demo/lora/02-xianxia.png",
+      imagePosition: "center 30%",
+      imageNudgeYPercent: 17,
     },
     {
       id: "thick-paint-portrait",
-      category: "art-style",
-      title: "厚涂人像 · 光与噪点",
-      tag: "欧美厚涂 / 人像",
-      imageUrl: "https://placehold.co/600x800/0a0a0a/ededed?text=Thick+Paint",
+      category: "game-assets",
+      title: "欧美厚涂 / 游戏",
+      tag: "西方奇幻 / 游戏立绘",
+      imageUrl: "/demo/lora/03-western-game.png",
     },
     {
       id: "immersive-architecture",
       category: "architecture",
       title: "沉浸式空间装置",
       tag: "建筑与空间",
-      imageUrl:
-        "https://placehold.co/600x800/0a0a0a/ededed?text=Immersive+Space",
+      imageUrl: "/demo/lora/04-immersive.png",
     },
     {
       id: "starscape",
-      category: "architecture",
-      title: "星空幻想 · 观景平台",
-      tag: "数字建筑 / 星空",
-      imageUrl: "https://placehold.co/600x800/0a0a0a/ededed?text=Starscape",
+      category: "art-style",
+      title: "梦幻水彩",
+      tag: "水彩质感 / 柔和光影",
+      imageUrl: "/demo/lora/05-dream-watercolor.png",
+      imagePosition: "center 40%",
+      imageNudgeYPercent: 5.5,
+    },
+    {
+      id: "q-chibi-ink-game",
+      category: "game-assets",
+      title: "Q 版水墨 · 游戏角色",
+      tag: "Q版国风 / 游戏立绘",
+      imageUrl: "/demo/lora/06-q-ink-game.png",
+      imagePosition: "center 32%",
+      imageNudgeYPercent: 9,
     },
   ];
 }
